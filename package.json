@@ -13,7 +13,7 @@
   "author": "deanmlittle",
   "license": "ISC",
   "peerDependencies": {
-    "bsv-wasm": "^1.0.0"
+    "bsv-wasm": "^2.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",

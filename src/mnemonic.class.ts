@@ -46,7 +46,7 @@ export class Mnemonic {
     
     static fromBytes(bytes: Uint8Array, words: string[], spacer: string = ' '): Mnemonic {
         if(bytes.length%4!==0 || bytes.length<16) throw new Error("Entropy bytes must be a multiple of 32 bits and no smaller than 128 bits")
-        const h = Hash.sha256(bytes).toBytes()
+        const h = Hash.sha_256(bytes).to_bytes()
         let b: string = '';
         bytes.forEach((byte:number) => {
             b+=byte.toString(2).padStart(8, '0')

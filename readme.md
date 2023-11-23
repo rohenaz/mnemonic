@@ -19,7 +19,7 @@ Some people speak languages other than English, present company included. There'
 
 ## Installation
 
-BSV Mnemonic requires the peer dependency of `bsv-wasm ^1.0.0`. To add both packages to your project, run the following:
+BSV Mnemonic requires the peer dependency of `bsv-wasm ^2.0.0`. To add both packages to your project, run the following:
 
 ```sh
 npm install bsv-wasm @bsvwasm/mnemonic
@@ -40,7 +40,7 @@ console.log(mnemonic.toHex())
 // Outputs: 1ab91c1961163cf0fa9165095c25fe08
 ```
 
-The seed phrase may be any multiple of 3 words with a minimum length of 12 words. Seeds with 13 or 25 words will treat the 13th or 25th word respectively as a passphrase. For any other seed length that you wish to use with a passphrase, you may explicitly set one via the `Mnemonic.passphrase()` method.
+The seed phrase may be any multiple of 3 words with a minimum length of 12 words. Seeds with 13 or 25 words will treat the 13th or 25th word respectively as a passphrase. For any other seed length that you wish to use with a passphrase, you may explicitly set one via the `Mnemonic.setPasshrase()` method.
 
 #### From Hex String
 
@@ -76,14 +76,14 @@ You can also instantiate a new `Mnemonic` from a binary string. Unlike the hex `
 
 
 #### Passphrases (Optional)
-Seeds with 13 or 25 words will treat the 13th or 25th word respectively as a passphrase. For any other seed length that you wish to use with a passphrase, or any `Mnemonic` instantiated by `hex`, `Uint8Array` or binary `string` methods, you may explicitly set a passphrase using the `Mnemonic.passphrase()` method:
+Seeds with 13 or 25 words will treat the 13th or 25th word respectively as a passphrase. For any other seed length that you wish to use with a passphrase, or any `Mnemonic` instantiated by `hex`, `Uint8Array` or binary `string` methods, you may explicitly set a passphrase using the `Mnemonic.setPassphrase()` method:
 
 ```ts
 import { MnemonicZH_HK } from '@bsvwasm/mnemonic'
 
 const mnemonic = new MnemonicZH_HK('基 掘 面 胸 唱 紹 漲 今 裡 曹 潤 心')
 		
-mnemonic.passphrase('家黃萬事興')
+mnemonic.setPassphrase('家黃萬事興')
 
 console.log(mnemonic.toBIP39Seed())
 
